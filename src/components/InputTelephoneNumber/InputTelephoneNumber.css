@@ -1,0 +1,36 @@
+.user-window {
+  width: 34vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-window__input-telephone-number {
+  display: flex;
+  margin-top: 10px;
+}
+.user-window__create-interlocutor {
+  margin-top: 20px;
+}
+.user-window__create-chat {
+  width: 25vw;
+  background: #f2f3f5;
+  border-radius: 70px;
+  height: 35px;
+  color: #a9a9a9;
+  border: 0;
+}
+.user-window__telephone-number {
+  position: relative;
+  width: 32vw;
+}
+.user-window__chats {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+}
+p {
+  font-weight: 700;
+  padding-left: 7vw;
+}

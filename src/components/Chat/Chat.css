@@ -1,0 +1,44 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 66vw;
+  height: 100vh;
+}
+.chat__input-message {
+  position: absolute;
+  bottom: 21px;
+  right: 20px;
+  left: 20px;
+}
+.chat__messages {
+  display: block;
+  height: 100vh;
+  border: 1px solid #000000;
+  position: relative;
+  background: rgba(241, 244, 247, 0.6);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.chat__interlocutor-data {
+  justify-content: center;
+  height: 7vh;
+  margin-left: 8vh;
+}
+.chat__interlocutor-data::before {
+  content: "";
+  display: block;
+  height: 7vh;
+  top: 0;
+  border: 1px solid #f2f2f2;
+  left: 0;
+  position: absolute;
+}
+.interlocutor-phone-number {
+  font-size: 2vh;
+  font-weight: 700;
+  height: 7vh;
+}
+.chat__messages__items {
+  max-height: 81vh;
+  overflow-y: scroll;
+}
