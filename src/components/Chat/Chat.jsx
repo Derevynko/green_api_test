@@ -26,7 +26,7 @@ function Chat() {
         if (res.data != null) {
           if (res.data.body.typeWebhook === "incomingMessageReceived") {
             if (
-              res.data.body.senderData.chatId ===
+              res.data.body.senderData.chatId ==
               `${phoneNumberToSendMessage}@c.us`
             )
               dispatch(

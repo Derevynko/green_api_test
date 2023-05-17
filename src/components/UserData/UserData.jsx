@@ -1,7 +1,7 @@
 import React from "react";
 import "./UserData.css";
 
-function UserData({ idInstance, apiTokenInstance }) {
+function UserData({ idInstance }) {
   return (
     <div className="user-data-auto">
       <p>idInstance:{idInstance}</p>

@@ -13,14 +13,11 @@ function UserSignUp() {
   const state = useSelector((state) => state);
 
   const apiTokenInstance = state.userData.apiTokenInstance;
-  const dataUser = state.userData.userData;
   const idInstance = state.userData.idInstance;
   const updataUser = () => {
-    console.log(apiTokenInstance);
     dispatch(updataUserAuthorizationIdInstance(idInstance));
     dispatch(updataUserAuthorizationApiTokenInstance(apiTokenInstance));
   };
-  console.log(dataUser);
   return (
     <div className="user-sign-up">
       <div className="user-sign-up__container">
