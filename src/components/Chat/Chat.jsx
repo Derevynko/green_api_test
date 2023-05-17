@@ -25,16 +25,12 @@ function Chat() {
       .then((res) => {
         if (res.data != null) {
           if (res.data.body.typeWebhook === "incomingMessageReceived") {
-            if (
-              res.data.body.senderData.chatId ==
-              `${phoneNumberToSendMessage}@c.us`
-            )
-              dispatch(
-                addMessage({
-                  value: res.data.body.messageData.textMessageData.textMessage,
-                  type: "accepted",
-                })
-              );
+            dispatch(
+              addMessage({
+                value: res.data.body.messageData.textMessageData.textMessage,
+                type: "accepted",
+              })
+            );
             axios
               .delete(
                 `https://api.green-api.com/waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${res.data.receiptId}`
