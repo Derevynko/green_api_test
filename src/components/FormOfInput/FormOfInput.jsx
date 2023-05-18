@@ -9,7 +9,13 @@ function FormOfInput({
   className,
 }) {
   return (
-    <div className={className}>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        onClick();
+      }}
+      className={className}
+    >
       <input
         className={
           className === "input-message-form"
@@ -26,11 +32,11 @@ function FormOfInput({
             ? "input-message-form__button"
             : "submit-telephone-number"
         }
-        onClick={onClick}
+        type="submit"
       >
         <img src={SendImage} alt="" className="input-message-form__icon" />
       </button>
-    </div>
+    </form>
   );
 }
 

@@ -29,6 +29,8 @@ function Chat() {
               addMessage({
                 value: res.data.body.messageData.textMessageData.textMessage,
                 type: "accepted",
+                chatId: res.data.body.senderData.chatId,
+                key: res.data.receiptId,
               })
             );
             axios
@@ -63,13 +65,20 @@ function Chat() {
         `https://api.green-api.com/waInstance${idInstance}/SendMessage/${apiTokenInstance}`,
         user
       )
-      .then(() => {
-        dispatch(addMessage({ value: currentMessage, type: "sent" }));
+      .then((res) => {
+        dispatch(
+          addMessage({
+            value: currentMessage,
+            type: "sent",
+            chatId: `${phoneNumberToSendMessage}@c.us`,
+            key: res.data.receiptId,
+          })
+        );
         dispatch(updateInputMessage(""));
       });
   };
-  const inputMessage = (value) => {
-    dispatch(updateInputMessage(value.target.value));
+  const inputMessage = (event) => {
+    dispatch(updateInputMessage(event.target.value));
   };
 
   return (
@@ -81,13 +90,15 @@ function Chat() {
         <div className="chat__messages__items">
           <>
             {messages.map((item) => {
-              return (
-                <MessageItem
-                  key={item.value}
-                  className={item.type}
-                  messageName={item.value}
-                ></MessageItem>
-              );
+              if (item.chatId === `${phoneNumberToSendMessage}@c.us`)
+                return (
+                  <MessageItem
+                    key={item.key}
+                    className={item.type}
+                    messageName={item.value}
+                  ></MessageItem>
+                );
+              else return null;
             })}
           </>
         </div>

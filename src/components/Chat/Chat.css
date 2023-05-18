@@ -39,6 +39,6 @@
   height: 7vh;
 }
 .chat__messages__items {
-  max-height: 81vh;
-  overflow-y: scroll;
+  height: 81vh;
+  overflow-y: auto;
 }
