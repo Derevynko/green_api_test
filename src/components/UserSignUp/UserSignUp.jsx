@@ -6,7 +6,7 @@ import {
   updataUserInputApiTokenInstance,
   updataUserAuthorizationIdInstance,
   updataUserAuthorizationApiTokenInstance,
-} from "../store/UserInputSlice";
+} from "../../store/UserInputSlice";
 
 function UserSignUp() {
   const dispatch = useDispatch();

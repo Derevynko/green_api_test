@@ -4,7 +4,7 @@ import {
   updataUserInputPhoneNumer,
   onSubmitPhoneNumber,
   onClickBtnNewChat,
-} from "../store/PhoneNumberForMessagingSlice";
+} from "../../store/PhoneNumberForMessagingSlice";
 import FormOfInput from "../FormOfInput/FormOfInput";
 import "./InputTelephoneNumber.css";
 import UserData from "../UserData/UserData";
@@ -33,12 +33,12 @@ function InputTelephoneNumber() {
         {clickBtn ? (
           <div className="user-window__telephone-number">
             <FormOfInput
-              className="user-window__input-telephone-number"
+              className="input-telephone-number-form"
               placeholder="Введите телефон"
               onChangeInput={(inputValue) => {
                 dispatch(updataUserInputPhoneNumer(inputValue.target.value));
               }}
-              onClick={addNewChat}
+              onSubmit={addNewChat}
             />
           </div>
         ) : (
@@ -47,10 +47,13 @@ function InputTelephoneNumber() {
           </button>
         )}
       </div>
-      <div className="user-window__chats">
-        <p>Чаты:</p>
-        {phoneNumber === "" ? null : <ChatItem telephoneNumber={phoneNumber} />}
-      </div>
+      {phoneNumber !== "" ? (
+        <div className="user-window__chats">
+          {phoneNumber === "" ? null : (
+            <ChatItem telephoneNumber={phoneNumber} />
+          )}
+        </div>
+      ) : null}
     </div>
   );
 }

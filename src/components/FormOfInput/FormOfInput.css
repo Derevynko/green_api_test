@@ -1,52 +1,57 @@
 .input-message-form {
-  border-radius: 60px;
   position: relative;
-  display: table;
+  display: flex;
+  align-items: center;
   width: 100%;
 }
 .input-message-form__input {
-  border-radius: 60px;
+  border-radius: 8px;
   align-items: center;
   table-layout: fixed;
   justify-content: center;
   display: block;
-  height: 7vh;
+  height: 5vh;
   border: 0;
+  outline: none;
   padding-left: 20px;
   width: 80%;
 }
 .input-message-form__button {
-  border-radius: 30px;
   border: 0;
   position: absolute;
-  width: 7vh;
-  bottom: -4px;
-
+  color: #54656f;
+  background: none;
+  width: 5vh;
   right: 0px;
   padding: 0;
 }
-.input-message-form__icon {
-  width: 7vh;
-  height: 7vh;
+.input-telephone-number-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
-.submit-telephone-number {
-  border-radius: 30px;
-  border: 0;
-  position: absolute;
-  width: 7vh;
-  bottom: -4px;
-  right: 0px;
-  padding: 0;
-}
-.input-telephone-number {
-  border-radius: 60px;
+.input-telephone-number-form__input {
+  border-radius: 8px;
   align-items: center;
   table-layout: fixed;
   justify-content: center;
   display: block;
-  height: 7vh;
+  height: 5vh;
   border: 0;
+  background-color: #f0f2f5;
+  margin-left: 2vw;
+  outline: none;
   padding-left: 20px;
-  width: 70%;
-  background-color: #f2f3f5;
+  width: 80%;
+}
+.input-telephone-number-form__button {
+  border: 0;
+  position: absolute;
+  color: #54656f;
+  background: none;
+  width: 3vw;
+  right: 0px;
+  padding: 0;
 }

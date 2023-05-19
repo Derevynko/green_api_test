@@ -8,15 +8,15 @@
   border-radius: 10px;
 }
 .sent {
-  background-color: #61c554;
-  color: #ffffff;
+  background-color: #d9fdd3;
+  color: #000000;
   float: right;
   clear: both;
   margin-top: 35px;
   margin-right: 20px;
 }
 .accepted {
-  background-color: #e8ecef;
+  background-color: #ffffff;
   color: #000000;
   float: left;
   clear: both;

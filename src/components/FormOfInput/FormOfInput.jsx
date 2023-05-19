@@ -1,10 +1,10 @@
 import React from "react";
 import "./FormOfInput.css";
-import SendImage from "../../images/send-image.png";
+import { ReactComponent as SendMessage } from "../../Images/send-message-icon.svg";
 function FormOfInput({
   placeholder,
   onChangeInput,
-  onClick,
+  onSubmit,
   value,
   className,
 }) {
@@ -12,29 +12,18 @@ function FormOfInput({
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        onClick();
+        onSubmit();
       }}
       className={className}
     >
       <input
-        className={
-          className === "input-message-form"
-            ? "input-message-form__input"
-            : "input-telephone-number"
-        }
+        className={`${className}__input`}
         placeholder={placeholder}
         onChange={(value) => onChangeInput(value)}
         value={value}
       />
-      <button
-        className={
-          className === "input-message-form"
-            ? "input-message-form__button"
-            : "submit-telephone-number"
-        }
-        type="submit"
-      >
-        <img src={SendImage} alt="" className="input-message-form__icon" />
+      <button className={`${className}__button`} type="submit">
+        <SendMessage />
       </button>
     </form>
   );

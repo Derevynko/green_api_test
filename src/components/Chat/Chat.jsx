@@ -5,7 +5,8 @@ import "./Chat.css";
 import FormOfInput from "../FormOfInput/FormOfInput";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addMessage, updateInputMessage } from "../store/ChatSlice";
+import { addMessage, updateInputMessage } from "../../store/ChatSlice";
+import { ReactComponent as UserAvatar } from "../../Images/user-avatar.svg";
 
 function Chat() {
   const dispatch = useDispatch();
@@ -25,14 +26,15 @@ function Chat() {
       .then((res) => {
         if (res.data != null) {
           if (res.data.body.typeWebhook === "incomingMessageReceived") {
-            dispatch(
-              addMessage({
-                value: res.data.body.messageData.textMessageData.textMessage,
-                type: "accepted",
-                chatId: res.data.body.senderData.chatId,
-                key: res.data.receiptId,
-              })
-            );
+            if (res.data.body.messageData.typeMessage === "textMessage")
+              dispatch(
+                addMessage({
+                  value: res.data.body.messageData.textMessageData.textMessage,
+                  type: "accepted",
+                  chatId: res.data.body.senderData.chatId,
+                  key: res.data.receiptId,
+                })
+              );
             axios
               .delete(
                 `https://api.green-api.com/waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${res.data.receiptId}`
@@ -84,29 +86,28 @@ function Chat() {
   return (
     <div className="chat">
       <div className="chat__interlocutor-data">
+        <UserAvatar className="chat__interlocutor-data__user-avatar" />
         <p className="interlocutor-phone-number">{`+ ${phoneNumberToSendMessage}`}</p>
       </div>
       <div className="chat__messages">
         <div className="chat__messages__items">
-          <>
-            {messages.map((item) => {
-              if (item.chatId === `${phoneNumberToSendMessage}@c.us`)
-                return (
-                  <MessageItem
-                    key={item.key}
-                    className={item.type}
-                    messageName={item.value}
-                  ></MessageItem>
-                );
-              else return null;
-            })}
-          </>
+          {messages.map((item) => {
+            if (item.chatId === `${phoneNumberToSendMessage}@c.us`)
+              return (
+                <MessageItem
+                  key={item.key}
+                  className={item.type}
+                  messageName={item.value}
+                ></MessageItem>
+              );
+            else return null;
+          })}
         </div>
         <div className="chat__input-message">
           <FormOfInput
             className="input-message-form"
             value={currentMessage}
-            onClick={sendMessage}
+            onSubmit={sendMessage}
             placeholder="Введите сообщение"
             onChangeInput={inputMessage}
           />
