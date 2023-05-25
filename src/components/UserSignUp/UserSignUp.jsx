@@ -20,7 +20,13 @@ function UserSignUp() {
   };
   return (
     <div className="user-sign-up">
-      <div className="user-sign-up__container">
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          updataUser();
+        }}
+        className="user-sign-up__container"
+      >
         <input
           className="user-sign-up__input"
           placeholder="Введите idInstance"
@@ -36,8 +42,8 @@ function UserSignUp() {
           }}
         />
 
-        <button onClick={updataUser}>Submit</button>
-      </div>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
