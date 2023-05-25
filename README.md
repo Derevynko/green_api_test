@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+<h1>Описание проекта:</h1>
+1) Пользователь переходит на сайт чата и вводит свои учетные данные из системы GREEN-API (idInstance, apiTokenInstance);</br>
+2)Пользователь вводит номер телефона получателя и создает новый чат;</br>
+3) Пользователь пишет текстовое сообщение и отправляет его получателю в WhatsApp</br>
+4) Получатель отвечает на сообщение в мессенджере WhatsApp</br>
+5) Пользователь видит ответ получателя в чате</br>
+<h1>Стэк:</h1>
+1) HTML</br>
+2) CSS</br>
+3) React JS</br>
+4) Redux toolkit</br>
+5) Axios</br>
+<h1>Планы на будущее:</h1>
+1) Отрефакторить код;</br>
+3) Сделать адаптив под мобильную версию;</br>
+4) Вынести ассинхронные запросы к серверу из компонента с помощью rtk-query</br>
+<h1>Инструкция по запуску:</h1>
+1) Клонируем репризиторий:  git clone https://github.com/Derevynko/green_api_test.git</br>
+2) Устанавливаем зависимости проекта: npm i</br>
+3) Запускаем проект: npm start</br>
+4) Регистрируемся на платформе https://green-api.com/ для возможности работы с API WhatsAPP;</br>
+5) Заходим в учетную запись и нажимаем "Создать инстанс";</br>
+6) Авторизуемся в инстансе;</br>
+7) Вводим в запущенном приложении idInstance, apiTokenInstance;</br>
+8) Создаём чат и вводим номер телефона получателя без "+". Например: "79991112222";</br>
+9) Общаемся в чате с пользователем.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
